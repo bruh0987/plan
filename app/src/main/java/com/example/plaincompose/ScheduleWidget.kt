@@ -1,7 +1,10 @@
 package com.example.plaincompose
 
 import android.content.Context
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.appwidget.GlanceAppWidget
@@ -25,8 +28,6 @@ import androidx.glance.layout.Spacer
 import androidx.glance.layout.defaultWeight
 import androidx.glance.layout.height
 import androidx.glance.layout.width
-import androidx.glance.unit.dp
-import androidx.glance.unit.sp
 
 class ScheduleWidget : GlanceAppWidget() {
     override suspend fun provideGlance(context: Context, id: GlanceId) {
@@ -40,7 +41,7 @@ class ScheduleWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = ScheduleWidget()
 }
 
-@androidx.glance.Composable
+@Composable
 private fun ScheduleWidgetContent() {
     Column(
         modifier = GlanceModifier
