@@ -25,7 +25,6 @@ import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import androidx.glance.layout.Spacer
-import androidx.glance.layout.defaultWeight
 import androidx.glance.layout.height
 import androidx.glance.layout.width
 
@@ -57,7 +56,7 @@ private fun ScheduleWidgetContent() {
             ScheduleDays.forEach { day ->
                 Text(
                     text = day.take(3).uppercase(),
-                    modifier = GlanceModifier.defaultWeight(),
+                    modifier = GlanceModifier.width(46.dp),
                     style = TextStyle(
                         color = ColorProvider(Color(0xFFF5F3F7)),
                         fontWeight = FontWeight.Bold,
@@ -70,7 +69,7 @@ private fun ScheduleWidgetContent() {
 
         ScheduleLessons.forEachIndexed { rowIndex, lessons ->
             Row(
-                modifier = GlanceModifier.fillMaxWidth().defaultWeight(),
+                modifier = GlanceModifier.fillMaxWidth().height(50.dp),
             ) {
                 Box(
                     modifier = GlanceModifier.width(42.dp).fillMaxSize(),
@@ -100,7 +99,7 @@ private fun ScheduleWidgetContent() {
                 lessons.forEach { lesson ->
                     Box(
                         modifier = GlanceModifier
-                            .defaultWeight()
+                            .width(46.dp)
                             .fillMaxSize()
                             .padding(1.dp)
                             .cornerRadius(5.dp)
